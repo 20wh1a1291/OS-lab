@@ -1,0 +1,82 @@
+calculating net salary:
+
+echo "enter basic salary"
+read bs
+hra='echo $bs \* 10 / 100 | bc' 
+ta='echo $bs \* 15 / 100 | bc' 
+da='echo $bs \* 2 / 100 | bc' 
+tax='echo $bs \* 5 / 100 | bc' 
+pf='echo $bs \* 10 / 100 | bc' 
+add='echo $hra + $ta + $da | bc' 
+ded='echo  $tax  +  $pf  |  bc' 
+netsal='echo $bs + $add - $ded | bc' 
+echo  net  salary  is  $netsal
+
+Even-Odd
+
+echo "Enter the Number" 
+read n 
+r=`expr $n % 2` 
+if [ $r -eq 0 ] 
+then 
+echo "$n is Even number" 
+else 
+echo "$n is Odd number" 
+fi 
+
+finding factorial
+
+echo "Enter a Number"
+read n
+i=`expr $n - 1` p=1
+while [ $i -ge 1 ]
+do
+n=`expr $n \* $i` i=`expr $i - 1` done
+echo "The Factorial of the given Number is $n"
+
+finding greatest of three
+
+echo "enter the value of a b c"
+read a
+read  b
+read  c
+if test $a -gt $b -a $a -gt $c then
+else
+echo  "a  is  greatest"
+if test $b -gt $c then
+fi
+
+leap year
+
+echo "Enter the year"
+read y
+b=`expr $y % 4` if [ $b -eq 0 ]
+then
+echo "$y is a leap year"
+else
+echo "$y is not a leap year" 
+fi
+
+length of an input
+
+echo "enter string" 
+read str
+len='echo $str | wc -c' len='expr $len - 1'
+echo "length  of  string  =  $len"
+
+prime or not
+
+echo "enter number"
+read num
+i=2
+while test $i -lt $num 
+do
+k='expr $num / $i'
+if test $k -eq 0 then
+echo "number is not prime" 
+exit
+fi
+i='expr $i + 1'
+done
+echo "number is prime"
+
